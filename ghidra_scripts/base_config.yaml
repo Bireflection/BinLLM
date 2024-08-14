@@ -1,0 +1,109 @@
+pre_render_graph_svg: false
+pre_render_graph_pdf: false
+pre_render_graph_png: false
+output_decompiled_c_and_disassembly_html: false
+output_individual_paths_graph: true
+output_global_graph: false
+split_global_graph_by_funcs: false
+output_relative_paths: true
+output_prompt_directory: CWE78_OS_Command_Injection__char_connect_socket_execl_09-bad
+output_dest_src_directory: CWE78_OS_Command_Injection__char_connect_socket_execl_09-bad
+output_time_log: time_CWE78_OS_Command_Injection__char_connect_socket_execl_09-bad
+sink_functions:
+  strcpy:
+  - 1
+  strncpy:
+  - 2
+  fprintf:
+  - 1
+  snprintf:
+  - 1
+  - 2
+  vfprintf:
+  - 1
+  vprintf:
+  - 0
+  execl:
+  - 3
+  execlp:
+  - 3
+  popen:
+  - 0
+  system:
+  - 0
+  printf:
+  - 1
+  read:
+  - 0
+  malloc:
+  - 0
+  realloc:
+  - 1
+  calloc:
+  - 0
+  - 1
+  memcpy:
+  - 2
+  fwrite:
+  - 2
+  strcat:
+  - 1
+taint_labels:
+  __isoc99_fscanf:
+  - 2
+  recv:
+  - 1
+  fgets:
+  - 0
+  fscanf:
+  - 2
+  recvfrom:
+  - 1
+  BIO_gets:
+  - 1
+  getenv:
+  - ret
+  BIO_read:
+  - 1
+source_functions:
+- tar_extract_file
+- __isoc99_fscanf
+- recv
+- fgets
+- fscanf
+- recvfrom
+- BIO_gets
+- getenv
+- BIO_read
+source_global_symbols:
+- uri
+flag_main_as_source: false
+auto_define_undefined_functions: false
+supress_cannot_find_parent_function_warning: true
+trace_symbol_offset: false
+find_better_arg_max_iterations: 50
+max_funccall_output_trace_depth: 1000
+console_log_level: INFO
+file_log_level: NOTSET
+source_sink_parameter_signatures:
+  strcat:
+    destination_parameter_indexes:
+    - 0
+    source_parameter_indexes:
+    - 1
+  strcpy:
+    destination_parameter_indexes:
+    - 0
+    source_parameter_indexes:
+    - 1
+  strncpy:
+    destination_parameter_indexes:
+    - 0
+    source_parameter_indexes:
+    - 1
+  strstr:
+    destination_parameter_indexes:
+    - ret
+    source_parameter_indexes:
+    - 0
+    - 1
